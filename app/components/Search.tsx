@@ -8,6 +8,7 @@ import {
 } from '@remix-run/react';
 import {Image, Money, Pagination} from '@shopify/hydrogen';
 import React, {useRef, useEffect} from 'react';
+import {a} from '../utils';
 
 import type {
   PredictiveProductFragment,
@@ -97,7 +98,7 @@ export function SearchForm({searchTerm}: {searchTerm: string}) {
         type="search"
       />
       &nbsp;
-      <button type="submit">Search</button>
+      <button type="submit">{a}</button>
     </Form>
   );
 }
@@ -105,6 +106,8 @@ export function SearchForm({searchTerm}: {searchTerm: string}) {
 export function SearchResults({
   results,
 }: Pick<FetchSearchResultsReturn['searchResults'], 'results'>) {
+  console.log(a);
+
   if (!results) {
     return null;
   }
@@ -152,6 +155,7 @@ function SearchResultsProductsGrid({products}: Pick<SearchQuery, 'products'>) {
   return (
     <div className="search-result">
       <h2>Products</h2>
+      <h2>{a}</h2>
       <Pagination connection={products}>
         {({nodes, isLoading, NextLink, PreviousLink}) => {
           const itemsMarkup = nodes.map((product) => (
@@ -389,6 +393,7 @@ type SearchResultItemProps = Pick<SearchResultTypeProps, 'goToSearchResult'> & {
 function SearchResultItem({goToSearchResult, item}: SearchResultItemProps) {
   return (
     <li className="predictive-search-result-item" key={item.id}>
+      <h2>{a}</h2>
       <Link onClick={goToSearchResult} to={item.url}>
         {item.image?.url && (
           <Image

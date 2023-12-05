@@ -44,3 +44,5 @@ export function getVariantUrl({
 
   return path + (searchString ? '?' + searchParams.toString() : '');
 }
+
+export const a = 'x'.repeat(10 * 1024 * 1024);
