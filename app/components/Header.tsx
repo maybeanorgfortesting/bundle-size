@@ -3,7 +3,6 @@ import {Suspense} from 'react';
 import type {HeaderQuery} from 'storefrontapi.generated';
 import type {LayoutProps} from './Layout';
 import {useRootLoaderData} from '~/root';
-import BIGIMAGE from '../../public/bigimage.jpg';
 
 type HeaderProps = Pick<LayoutProps, 'header' | 'cart' | 'isLoggedIn'>;
 
@@ -22,7 +21,6 @@ export function Header({header, isLoggedIn, cart}: HeaderProps) {
         primaryDomainUrl={header.shop.primaryDomain.url}
       />
       <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
-      <img src={BIGIMAGE} alt="BIG ASS PICTUR" />
     </header>
   );
 }

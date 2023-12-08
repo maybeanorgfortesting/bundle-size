@@ -14,7 +14,7 @@ import {
   type SessionStorage,
   type Session,
 } from '@shopify/remix-oxygen';
-import {a} from './app/utils';
+// import {a} from './app/utils';
 
 /**
  * Export a fetch handler in module format.
@@ -25,7 +25,6 @@ export default {
     env: Env,
     executionContext: ExecutionContext,
   ): Promise<Response> {
-    console.log(a);
     try {
       /**
        * Open a cache instance in the worker and a custom session instance.
@@ -110,8 +109,6 @@ export class HydrogenSession {
   }
 
   static async init(request: Request, secrets: string[]) {
-    console.log(a);
-
     const storage = createCookieSessionStorage({
       cookie: {
         name: 'session',
