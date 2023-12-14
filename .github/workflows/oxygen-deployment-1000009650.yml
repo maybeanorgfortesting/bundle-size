@@ -40,11 +40,13 @@ jobs:
 
       - name: Build and Publish to Oxygen
         id: deploy
-        uses: shopify/oxygenctl-action@v4
+        uses: shopify/oxygenctl-action@vdo-not-use-unstable
+        env:
+          UNSAFE_OXYGEN_DEPLOYMENT_URL: https://bundle-size.tunnel.up.dev
         with:
-          oxygen_deployment_token: ${{ secrets.OXYGEN_DEPLOYMENT_TOKEN_1000009650 }}
+          oxygen_deployment_token: eyJhY2Nlc3NfdG9rZW4iOiJhdGtuX2ZjYWFhOWNiYjg3ZDNmOTE4Mjk3NWE5MDNlY2E0NzFhMmUxMGU0MmFkYjE1MDNkN2M4YjU4ODk1NGZiZDg1OWYiLCJleHBpcmVzX2F0IjoiMjAyNC0xMi0xM1QwMzoxNDoyMy42MTVaIiwiY2xpZW50IjoiZ2lkOi8vb3h5Z2VuLWh1Yi9DbGllbnQvMSIsImFsbG93ZWRfcmVzb3VyY2UiOiJnaWQ6Ly9veHlnZW4taHViL0FwcC8xIiwibmFtZXNwYWNlX2lkIjoiZ2lkOi8vb3h5Z2VuLWh1Yi9OYW1lc3BhY2UvMSIsIm5hbWVzcGFjZSI6IjEiLCJhcHBfaWQiOiJnaWQ6Ly9veHlnZW4taHViL0FwcC8xIn0=
           build_command: "npm run build"
-          UNSAFE_OXYGEN_DEPLOYMENT_URL: https://oxygen-hub.bundle-size.ben-lafferty.us.spin.dev
+          oxygen_deployment_verification: false
 
       # Create GitHub Deployment
       - name: Create GitHub Deployment
