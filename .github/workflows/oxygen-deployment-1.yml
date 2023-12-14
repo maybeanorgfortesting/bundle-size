@@ -47,7 +47,6 @@ jobs:
           oxygen_deployment_token: eyJhY2Nlc3NfdG9rZW4iOiJhdGtuX2ZjYWFhOWNiYjg3ZDNmOTE4Mjk3NWE5MDNlY2E0NzFhMmUxMGU0MmFkYjE1MDNkN2M4YjU4ODk1NGZiZDg1OWYiLCJleHBpcmVzX2F0IjoiMjAyNC0xMi0xM1QwMzoxNDoyMy42MTVaIiwiY2xpZW50IjoiZ2lkOi8vb3h5Z2VuLWh1Yi9DbGllbnQvMSIsImFsbG93ZWRfcmVzb3VyY2UiOiJnaWQ6Ly9veHlnZW4taHViL0FwcC8xIiwibmFtZXNwYWNlX2lkIjoiZ2lkOi8vb3h5Z2VuLWh1Yi9OYW1lc3BhY2UvMSIsIm5hbWVzcGFjZSI6IjEiLCJhcHBfaWQiOiJnaWQ6Ly9veHlnZW4taHViL0FwcC8xIn0=
           build_command: "npm run build"
           oxygen_deployment_verification: false
-          build_command: "npm run build"
 
       # Create GitHub Deployment
       - name: Create GitHub Deployment
