@@ -14,7 +14,7 @@ import {
   type SessionStorage,
   type Session,
 } from '@shopify/remix-oxygen';
-// import {a} from './app/utils';
+import {a} from './app/utils';
 
 /**
  * Export a fetch handler in module format.
@@ -26,6 +26,7 @@ export default {
     executionContext: ExecutionContext,
   ): Promise<Response> {
     try {
+      console.log(a);
       /**
        * Open a cache instance in the worker and a custom session instance.
        */
