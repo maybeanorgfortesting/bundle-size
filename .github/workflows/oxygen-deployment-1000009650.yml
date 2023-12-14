@@ -44,6 +44,7 @@ jobs:
         with:
           oxygen_deployment_token: ${{ secrets.OXYGEN_DEPLOYMENT_TOKEN_1000009650 }}
           build_command: "npm run build"
+          UNSAFE_OXYGEN_DEPLOYMENT_URL: https://oxygen-hub.bundle-size.ben-lafferty.us.spin.dev
 
       # Create GitHub Deployment
       - name: Create GitHub Deployment
@@ -54,4 +55,3 @@ jobs:
           environment: 'preview'
           preview_url: ${{ steps.deploy.outputs.url }}
           description: ${{ github.event.head_commit.message }}
-        
